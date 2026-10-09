@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romina Ibarra — Salón de Belleza Elite</title>
+  
+  <!-- Fuentes Elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Iconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Encabezado / Navigation -->
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="#inicio" class="logo-link">
+        <img src="1.png" alt="Romina Ibarra - Salón de belleza" class="logo-img" />
+      </a>
+      <div class="brand-copy">
+        <h1 class="brand-name">ROMINA IBARRA</h1>
+        <span class="brand-tagline">SALÓN DE BELLEZA</span>
+      </div>
+    </div>
+    
+    <!-- Botón Menú Hamburguesa en Móvil -->
+    <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir Menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav id="nav-menu">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#experiencia" class="nav-link">Experiencia</a>
+      <a href="#servicios" class="nav-link">Servicios</a>
+      <a href="#contacto" class="btn-gold-sm nav-link">Reservar Cita</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="gold-subtitle">ELEGANCIA Y EXCLUSIVIDAD</span>
+      <h2>Siente el verdadero arte de la belleza</h2>
+      <p>Un espacio concebido para resaltar tu sofisticación única con atención personalizada y de máxima categoría.</p>
+      <a href="https://wa.me/525512345678?text=Hola,%20deseo%20agendar%20una%20cita%20de%20alto%20nivel%20en%20Romina%20Ibarra" target="_blank" class="btn-gold">Agendar Experiencia</a>
+    </div>
+  </section>
+
+  <!-- Experiencia Elite Section -->
+  <section id="experiencia" class="experience-section">
+    <div class="container">
+      <div class="section-title">
+        <span>EXCELENCIA EN CADA DETALLE</span>
+        <h2>La Experiencia Romina Ibarra</h2>
+      </div>
+      <p class="experience-text">
+        Nos especializamos en brindar atención personalizada para una clientela selecta. Cada técnica, producto y diagnóstico está diseñado para elevar tu imagen al estándar más exclusivo de la moda internacional.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grid de Servicios Dinámicos -->
+  <section id="servicios" class="services-section">
+    <div class="container">
+      <div class="section-title">
+        <span>NUESTROS TRATAMIENTOS DE AUTOR</span>
+        <h2>Menú de Servicios</h2>
+      </div>
+      <div id="services-grid" class="services-grid">
+        <!-- Generado dinámicamente desde script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer con Animación de Tijeras Cortando -->
+  <footer id="contacto" class="footer">
+    <div class="footer-content">
+      <div class="brand-logo-footer">
+        <h3>ROMINA IBARRA</h3>
+        <p>SALÓN DE BELLEZA</p>
+      </div>
+      <p class="footer-address">Av. Presidente Masaryk, Polanco, Ciudad de México</p>
+      
+      <!-- Animación de Tijeras -->
+      <div class="scissors-container">
+        <div class="cut-line"></div>
+        <div class="scissors-icon">
+          <i class="fa-solid fa-scissors"></i>
+        </div>
+      </div>
+
+      <p class="copyright">© 2026 Romina Ibarra Salón de Belleza. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20solicitar%20información%20o%20agendar%20una%20cita" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="tooltip">Agenda por WhatsApp</span>
+  </a>
+
+  <!-- Carga de Scripts -->
+  <script src="services-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
