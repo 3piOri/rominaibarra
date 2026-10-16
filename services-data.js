@@ -19,15 +19,21 @@ const servicesData = [
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Uñas de Gel Esculturales",
+    title: "Maquillaje de Gala",
     price: "$1,200 MXN",
-    description: "Manicura rusa completa con esculpido de gel, acabado de alta resistencia y nail art minimalista elegante.",
-    image: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80"
+    description: "Maquillaje profesional para ocasiones especiales, con técnicas de aerógrafo avanzadas y productos de alta calidad.",
+    image: "https://plus.unsplash.com/premium_photo-1663040173266-4d41d3736cc9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
   },
   {
-    title: "Spa Pedicure Elite",
-    price: "$1,400 MXN",
-    description: "Tratamiento de exfoliación con sales minerales, mascarilla de parafina caliente, masaje relajante y esmaltado de larga duración.",
-    image: "https://plus.unsplash.com/premium_photo-1661499249417-c20d6b668469?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    title: "Microblading de Cejas",
+    price: "$2,000 MXN",
+    description: "Técnica semipermanente para diseño de cejas con resultados naturales y duraderos, incluye retoque inicial.",
+    image: "https://plus.unsplash.com/premium_photo-1661581957033-b8398b81eb54?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+  },
+  {
+    title: "Curso de Automaquillaje",
+    price: "$2,000 MXN",
+    description: "Taller práctico de automaquillaje personalizado, técnicas de contorno, iluminación y selección de productos según tipo de piel.",
+    image: "https://images.unsplash.com/photo-1652706299340-e8a346491541?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
   }
 ];
