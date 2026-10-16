@@ -22,7 +22,7 @@ const servicesData = [
     title: "Maquillaje de Gala",
     price: "$1,200 MXN",
     description: "Maquillaje profesional para ocasiones especiales, con técnicas de aerógrafo avanzadas y productos de alta calidad.",
-    image: "https://plus.unsplash.com/premium_photo-1663040173266-4d41d3736cc9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+    image: "https://images.unsplash.com/photo-1685688887487-4db91fa112f6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
   },
   {
     title: "Microblading de Cejas",
