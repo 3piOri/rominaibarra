@@ -326,10 +326,11 @@ body {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 200;
-  letter-spacing:3px;
+  letter-spacing:-1px;
   color: var(--gold-primary);
   margin-bottom: 5px;
   margin-top: 0px;
+  word-spacing: 10px;
 }
 .brand-logo-footer h4 {
   font-family: var(--font-heading);
