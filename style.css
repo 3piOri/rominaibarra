@@ -31,7 +31,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: var(--navbar-height);
+  height: 10rem;
   padding: 10px 5%;
   background: rgb(0, 0, 0);
   backdrop-filter: blur(10px);
@@ -42,25 +42,10 @@ body {
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.brand-name {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 200;
-  letter-spacing: 1px;
-  color: var(--logo-text-color);
-  background: none;
-  line-height: 1.2;
-}
-
-.brand-tagline {
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  letter-spacing: 4px;
-  color: var(--text-muted);
-  display: block;
-}
-
 .logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -72,13 +57,13 @@ body {
 }
 
 .logo-img {
-  width: 8rem;
-  height: 8rem;
+  width: 10rem;
+  height: 10rem;
   object-fit: contain;
 }
 
 .mobile-menu-btn {
-  display: none;
+  display: block;
   background: none;
   border: none;
   color: var(--gold-primary);
@@ -88,16 +73,39 @@ body {
 }
 
 .navbar nav {
+  position: fixed;
+  top: var(--navbar-height);
+  right: 0;
+  width: min(360px, 100%);
+  height: calc(100vh - var(--navbar-height));
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 24px;
+  background: rgba(10, 10, 10, 0.98);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.4s ease, visibility 0s linear 0.4s;
+  z-index: 999;
+}
+
+.navbar nav.active {
+  transform: translateX(0);
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 .navbar nav a {
   font-family: var(--font-body);
   color: var(--text-light);
   text-decoration: none;
-  margin-left: 20px;
-  font-size: 0.8rem;
+  margin-left: 0;
+  font-size: 1.1rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   transition: color 0.3s;
@@ -115,8 +123,8 @@ body {
 
 /* HERO SECTION */
 .hero {
-  min-height: 100vh;
-  padding-top: 80px;
+  min-height: 50vh;
+  padding-top: 140px;
   background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
   position: relative;
   display: flex;
@@ -173,7 +181,31 @@ body {
   text-transform: uppercase;
   font-size: 0.8rem;
   transition: transform 0.3s, box-shadow 0.3s;
-  border-radius: 2px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -70%;
+    z-index: 1;
+    width: 35%;
+    height: 220%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.18) 35%,
+        rgba(255, 255, 255, 0.85) 50%,
+        rgba(255, 255, 255, 0.18) 65%,
+        transparent
+    );
+    filter: blur(1px);
+    transform: skewX(-25deg);
+    animation: secondary-shine 3s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .btn-gold:hover {
@@ -181,14 +213,23 @@ body {
   box-shadow: 0 10px 20px rgba(168, 152, 136, 0.3);
 }
 
+@keyframes secondary-shine {
+    0% {
+        left: -70%;
+    }
+    100% {
+        left: 130%;
+    }
+  }
+
 /* SECCIONES COMUNES */
 .experience-section, .services-section {
   padding: 80px 5%;
+  background: #0d0d0d;
 }
 
 .experience-section {
   text-align: center;
-  background: #0d0d0d;
 }
 
 .section-title {
@@ -276,7 +317,7 @@ body {
 /* FOOTER & TIJERAS */
 .footer {
   background: #050505;
-  padding: 60px 5% 30px;
+  padding: 30px 5% 15px;
   text-align: center;
   border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
@@ -285,29 +326,31 @@ body {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 200;
-  letter-spacing: 3px;
+  letter-spacing:3px;
   color: var(--gold-primary);
+  margin-bottom: 5px;
+  margin-top: 0px;
 }
-
-.brand-logo-footer p {
-  letter-spacing: 4px;
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  margin-bottom: 12px;
+.brand-logo-footer h4 {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: 5px;
+  color: VAR(--text-muted);
+  margin-bottom: 25px;
 }
-
 .footer-address {
   color: var(--text-muted);
   font-size: 0.8rem;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .scissors-container {
   position: relative;
   width: 90%;
   max-width: 400px;
-  margin: 30px auto 40px;
-  height: 30px;
+  margin: 20px auto 10px;
+  height: 15px;
   display: flex;
   align-items: center;
 }
@@ -344,20 +387,33 @@ body {
 /* BOTÓN FLOTANTE WHATSAPP */
 .whatsapp-btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 50px;
   right: 20px;
   background-color: #25d366;
   color: #fff;
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.8rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 15px rgba(37,211,102,0.4);
   z-index: 2000;
   text-decoration: none;
+  transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    background-color: #08a72a;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
 .whatsapp-btn .tooltip {
@@ -375,31 +431,17 @@ body {
    ADAPTACIONES ESPECÍFICAS PARA MÓVILES (MEDIA QUERIES)
    =================================================== */
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: block; /* Muestra el botón hamburguesa */
+  .experience-section {
+    padding: 40px 5%;
+  }
+
+  .logo-img {
+    width: 8rem;
+    height: 8rem;
   }
 
   .navbar nav {
-    position: fixed;
-    top: var(--navbar-height);
-    right: -100%;
     width: 100%;
-    height: calc(100vh - var(--navbar-height));
-    background: rgba(10, 10, 10, 0.98);
-    flex-direction: column;
-    justify-content: center;
-    gap: 25px;
-    transition: right 0.4s ease;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
-  }
-
-  .navbar nav.active {
-    right: 0; /* Despliega el menú */
-  }
-
-  .navbar nav a {
-    margin-left: 0;
-    font-size: 1.1rem;
   }
 
   .hero h2 {
@@ -421,4 +463,5 @@ body {
   .whatsapp-btn .tooltip {
     display: none;
   }
+  
 }

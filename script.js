@@ -24,30 +24,37 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Error: No se encontró el archivo de datos services-data.js");
   }
 
-  // 2. Lógica para el menú desplegable en pantallas móviles
+  // 2. Lógica para el menú desplegable
   const menuToggle = document.getElementById("mobile-menu-toggle");
   const navMenu = document.getElementById("nav-menu");
   const navLinks = document.querySelectorAll(".nav-link");
 
   if (menuToggle && navMenu) {
-    // Abrir/Cerrar menú
+    const icon = menuToggle.querySelector("i");
+
+    const setMenuOpen = isOpen => {
+      navMenu.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+      if (icon) icon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+    };
+
     menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-      const icon = menuToggle.querySelector("i");
-      if (navMenu.classList.contains("active")) {
-        icon.className = "fa-solid fa-xmark";
-      } else {
-        icon.className = "fa-solid fa-bars";
-      }
+      setMenuOpen(!navMenu.classList.contains("active"));
     });
 
     // Cerrar menú al presionar cualquier enlace
     navLinks.forEach(link => {
       link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        const icon = menuToggle.querySelector("i");
-        if (icon) icon.className = "fa-solid fa-bars";
+        setMenuOpen(false);
       });
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && navMenu.classList.contains("active")) {
+        setMenuOpen(false);
+        menuToggle.focus();
+      }
     });
   }
 });
